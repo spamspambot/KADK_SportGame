@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65408404314457614}
   - component: {fileID: 135761427774500774}
   - component: {fileID: 114789589836899684}
-  - component: {fileID: 54273603166955254}
+  - component: {fileID: 54877756850822954}
   m_Layer: 0
   m_Name: pizza
   m_TagString: Pizza
@@ -331,7 +331,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1119393183844382}
   m_Mesh: {fileID: 4300000, guid: 6f2d5ec30e3a1554f91069f0e02aff05, type: 3}
---- !u!54 &54273603166955254
+--- !u!54 &54877756850822954
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -342,10 +342,10 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!65 &65408404314457614
 BoxCollider:
   m_ObjectHideFlags: 1

@@ -122,6 +122,9 @@ public class Player_Movement : MonoBehaviour
 
 
         pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+        pizzaObject.GetComponent<Rigidbody>().isKinematic = false;
+
         pizzaObject.transform.SetParent(null);
         pizzaObject.GetComponent<Rigidbody>().velocity = transform.forward * (pizzaShootVelocity + currentVelocity);
 
