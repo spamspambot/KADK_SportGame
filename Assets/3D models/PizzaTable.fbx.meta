@@ -15,7 +15,32 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Puzzle-Console-L00A
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: e014821eb7fa046e7aa84908d8c06af9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: a7d50cef0c0774540a22f60f84d5419c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 53548adef78db4d6199b5e33f72266d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 9bb9265bdcd0a466b9f265dd84d4cabb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: fb9060c45fc644e9f9bae91550e6aaaf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
