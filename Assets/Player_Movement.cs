@@ -8,6 +8,7 @@ public class Player_Movement : MonoBehaviour
     Rigidbody rb;
     public bool inverted;
     public GameObject pizzaContainer;
+    public GameObject pizzaObject;
     public bool mov;
     public bool nitro;
     public float actualVelocity;
@@ -112,12 +113,13 @@ public class Player_Movement : MonoBehaviour
     }
 
     void GetPizza(GameObject pizza) {
+        pizzaObject = pizza;
         pizza.transform.position = pizzaContainer.transform.position;
         pizza.transform.SetParent(pizzaContainer.transform);
     }
 
     void ShootPizza() {
-
+        pizzaObject.transform.SetParent(null);  
     }
 
     IEnumerator Crash()
