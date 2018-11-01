@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 0596b63958b2f47c3805068095c00c74
-timeCreated: 1541086865
+guid: 5cc4db3cbe1a94cf2914b16166eabb34
+timeCreated: 1541088605
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Fence03
+    2100000: Material.001
+    2100002: Material.002
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Ladder-M02A
+    4300000: Cube.001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Fence03
-    second: {fileID: 2100000, guid: af9e83e483ce2419c8321aeb82e40646, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 7ae37ca3f62e54f0ca12addc96a0c288, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: fb9060c45fc644e9f9bae91550e6aaaf, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

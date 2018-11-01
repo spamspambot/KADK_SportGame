@@ -14,7 +14,27 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: FactoryStructure-L07A
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FactoryStructure04
+    second: {fileID: 2100000, guid: 9bb9265bdcd0a466b9f265dd84d4cabb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FactoryStructure05
+    second: {fileID: 2100000, guid: 29c7525424a9c49328b36d600f654fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecruityBooth04
+    second: {fileID: 2100000, guid: 9bb9265bdcd0a466b9f265dd84d4cabb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecruityBooth05
+    second: {fileID: 2100000, guid: af9e83e483ce2419c8321aeb82e40646, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
