@@ -55,7 +55,7 @@ public class Player_Movement : MonoBehaviour
             else if (currentVelocity < 0) currentVelocity += velocityReduction;
             else currentVelocity = 0;
             if (nitro && Input.GetButton("XB_CROSS")) { currentVelocity = Mathf.Clamp(currentVelocity, -nitroMaxVelocity, nitroMaxVelocity);
-                transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y,4), ref zeroVel, stretchTime); }
+                transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y,8), ref zeroVel, stretchTime); }
             else { currentVelocity = Mathf.Clamp(currentVelocity, -maxVelocity, maxVelocity);
                 transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y,1 ), ref zeroVel, stretchTime/4); }
             rb.velocity = transform.forward * currentVelocity;
@@ -72,7 +72,7 @@ public class Player_Movement : MonoBehaviour
             //if (Mathf.Abs(inputManager.inputVertical) > 0) transform.Rotate(new Vector3(inputManager.inputVertical * turnVelocity * (Mathf.Abs(currentVelocity) / maxVelocity), 0, 0));
             if (Mathf.Abs(inputManager.inputHorizontal) > 0 && currentVelocity > 0)
             {
-                transform.Rotate(new Vector3(0, inputManager.inputHorizontal * turnVelocity, 0));
+                transform.Rotate(new Vector3(0, inputManager.inputHorizontal * turnVelocity, 0));   
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, -inputManager.inputHorizontal * 90), stability);
             }
             if (Mathf.Abs(inputManager.inputVertical) > 0 && currentVelocity > 0) { transform.Rotate(new Vector3(inputManager.inputVertical * turnVelocity, 0, 0)); }
@@ -101,6 +101,7 @@ public class Player_Movement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if(other.CompareTag("Pizza"))
         if (other.transform.CompareTag("Wall") && mov) { StartCoroutine("Crash"); print("crash"); }
         StartCoroutine("Crash"); print("crash");
     }

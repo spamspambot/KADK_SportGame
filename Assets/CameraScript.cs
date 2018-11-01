@@ -16,6 +16,7 @@ public class CameraScript : MonoBehaviour {
     Camera cam;
     float zeroFloat = 0;
     public float cameraZoomSpeed;
+    public float cameraHeight = 5;
     // Use this for initialization
 
     void Awake() {
@@ -42,7 +43,7 @@ public class CameraScript : MonoBehaviour {
         print(playerMov.currentVelocity);
         Vector3 dir = new Vector3(0, 0, distance);
         Quaternion rotation = Quaternion.Euler(currentY/360, currentX/360, 0);
-        transform.position = target.position + target.forward*distance + target.up * 5 ;
+        transform.position = target.position + target.forward*distance + target.up * cameraHeight ;
         transform.LookAt(target.position);
 	}
 }

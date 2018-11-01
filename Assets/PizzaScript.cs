@@ -14,4 +14,10 @@ public class PizzaScript : MonoBehaviour {
 	void Update () {
         if (idle) { transform.Rotate(0, 0, turnSpeed); }
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        { transform.rotation = Quaternion.identity;idle = false; }
+    }
 }
