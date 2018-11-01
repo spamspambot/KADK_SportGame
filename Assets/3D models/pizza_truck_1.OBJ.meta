@@ -73,7 +73,62 @@ ModelImporter:
     4300016: Group53336
     4300018: Group56458
     4300020: Group8552
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group16297Mat
+    second: {fileID: 2100000, guid: f626d3ce3927247d1ac3fcfa200e81cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group25756Mat
+    second: {fileID: 2100000, guid: 29c7525424a9c49328b36d600f654fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group2578Mat
+    second: {fileID: 2100000, guid: 07d0148307cf247ecb00b52e48e265b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group32254Mat
+    second: {fileID: 2100000, guid: 29c7525424a9c49328b36d600f654fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group40020Mat
+    second: {fileID: 2100000, guid: 53b8f59722c5d4311ad337145b4e0d06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group40352Mat
+    second: {fileID: 2100000, guid: a7d50cef0c0774540a22f60f84d5419c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group40367Mat
+    second: {fileID: 2100000, guid: fb9060c45fc644e9f9bae91550e6aaaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group53212Mat
+    second: {fileID: 2100000, guid: 53b8f59722c5d4311ad337145b4e0d06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group53336Mat
+    second: {fileID: 2100000, guid: fb9060c45fc644e9f9bae91550e6aaaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group56458Mat
+    second: {fileID: 2100000, guid: 29c7525424a9c49328b36d600f654fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group8552Mat
+    second: {fileID: 2100000, guid: 53b8f59722c5d4311ad337145b4e0d06, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
