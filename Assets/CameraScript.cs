@@ -14,6 +14,8 @@ public class CameraScript : MonoBehaviour {
     public float minDistance;
     public float maxDistance;
     Camera cam;
+    float zeroFloat = 0;
+    public float cameraZoomSpeed;
     // Use this for initialization
 
     void Awake() {
@@ -36,7 +38,7 @@ public class CameraScript : MonoBehaviour {
         currentX = target.rotation.eulerAngles.x;
         currentY = target.rotation.eulerAngles.y;
 
-        distance = -Mathf.Abs((maxDistance-minDistance) * playerMov.currentVelocity / playerMov.maxVelocity + minDistance);
+        distance = Mathf.SmoothDamp(distance,-Mathf.Abs((maxDistance-minDistance) * playerMov.currentVelocity / playerMov.maxVelocity + minDistance),ref zeroFloat,cameraZoomSpeed);
         print(playerMov.currentVelocity);
         Vector3 dir = new Vector3(0, 0, distance);
         Quaternion rotation = Quaternion.Euler(currentY/360, currentX/360, 0);
