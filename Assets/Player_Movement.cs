@@ -6,6 +6,8 @@ public class Player_Movement : MonoBehaviour
 {
     Player_Input inputManager;
     Rigidbody rb;
+    public bool inverted;
+    public GameObject pizzaContainer;
     public bool mov;
     public bool nitro;
     public float actualVelocity;
@@ -40,6 +42,7 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Input.GetButtonDown("XB_TRIANGLE")) inverted = !inverted; 
         //if (Input.GetButton("XB_CROSS")) rb.velocity = rb.velocity + (transform.forward * velocity);
         if (mov)
         {
@@ -75,7 +78,9 @@ public class Player_Movement : MonoBehaviour
                 transform.Rotate(new Vector3(0, inputManager.inputHorizontal * turnVelocity, 0));   
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, -inputManager.inputHorizontal * 90), stability);
             }
-            if (Mathf.Abs(inputManager.inputVertical) > 0 && currentVelocity > 0) { transform.Rotate(new Vector3(inputManager.inputVertical * turnVelocity, 0, 0)); }
+            if (Mathf.Abs(inputManager.inputVertical) > 0 && currentVelocity > 0) { if(inverted) transform.Rotate(new Vector3(-inputManager.inputVertical * turnVelocity, 0, 0));
+            else transform.Rotate(new Vector3(inputManager.inputVertical * turnVelocity, 0, 0));
+            }
 
 
             //   transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, 0);
@@ -101,9 +106,18 @@ public class Player_Movement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Pizza"))
+        if (other.CompareTag("Pizza")) GetPizza(other.gameObject);
         if (other.transform.CompareTag("Wall") && mov) { StartCoroutine("Crash"); print("crash"); }
-        StartCoroutine("Crash"); print("crash");
+       // StartCoroutine("Crash"); print("crash");
+    }
+
+    void GetPizza(GameObject pizza) {
+        pizza.transform.position = pizzaContainer.transform.position;
+        pizza.transform.SetParent(pizzaContainer.transform);
+    }
+
+    void ShootPizza() {
+
     }
 
     IEnumerator Crash()

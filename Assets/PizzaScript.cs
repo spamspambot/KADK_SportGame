@@ -20,4 +20,6 @@ public class PizzaScript : MonoBehaviour {
         if (other.CompareTag("Player"))
         { transform.rotation = Quaternion.identity;idle = false; }
     }
+
+
 }
