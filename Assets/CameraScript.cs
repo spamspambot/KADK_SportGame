@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour {
+    public int cameraID;
     public Transform target;
     Player_Movement playerMov;
     Quaternion startRotation;
@@ -12,13 +13,23 @@ public class CameraScript : MonoBehaviour {
     public float distance;
     public float minDistance;
     public float maxDistance;
-	// Use this for initialization
+    Camera cam;
+    // Use this for initialization
+
+    void Awake() {
+
+        cam = GetComponent<Camera>();
+        if(cameraID == 1)
+        cam.rect = new Rect(0, 0, 0.5F, 1F);
+        else if(cameraID == 2) cam.rect = new Rect(0.5F,0, 0.5F, 1F);
+    }
+
 	void Start () {
         playerMov = target.GetComponent<Player_Movement>();
         difference = transform.position - target.transform.position;
         startRotation = transform.rotation;
-     
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
