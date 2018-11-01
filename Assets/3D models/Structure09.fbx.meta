@@ -15,7 +15,32 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: FactoryStructure-Addon-M01A
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FactoryStructure03
+    second: {fileID: 2100000, guid: e014821eb7fa046e7aa84908d8c06af9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FactoryStructure04
+    second: {fileID: 2100000, guid: 1ae79e7a7ca03439e9e598ae179fc14b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FactoryStructure05
+    second: {fileID: 2100000, guid: af9e83e483ce2419c8321aeb82e40646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey
+    second: {fileID: 2100000, guid: fb9060c45fc644e9f9bae91550e6aaaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SecruityBooth04
+    second: {fileID: 2100000, guid: 9bb9265bdcd0a466b9f265dd84d4cabb, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

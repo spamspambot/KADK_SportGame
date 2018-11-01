@@ -43,7 +43,37 @@ ModelImporter:
     4300006: Group43706
     4300008: Group54631
     4300010: Group55378
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group272Mat
+    second: {fileID: 2100000, guid: 1503775fc34a10844a282f3f798ba7cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group39274Mat
+    second: {fileID: 2100000, guid: 1503775fc34a10844a282f3f798ba7cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group42899Mat
+    second: {fileID: 2100000, guid: f626d3ce3927247d1ac3fcfa200e81cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group43706Mat
+    second: {fileID: 2100000, guid: f626d3ce3927247d1ac3fcfa200e81cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group54631Mat
+    second: {fileID: 2100000, guid: 29c7525424a9c49328b36d600f654fcd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group55378Mat
+    second: {fileID: 2100000, guid: 29c7525424a9c49328b36d600f654fcd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
