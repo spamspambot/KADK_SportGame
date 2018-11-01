@@ -6,7 +6,7 @@ public class Player_Movement : MonoBehaviour
 {
     Player_Input inputManager;
     Rigidbody rb;
-    
+
     public bool inverted;
     public GameObject pizzaContainer;
     public GameObject pizzaObject;
@@ -46,87 +46,85 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (inputManager.inputQueue.Count > 0) {
+        if (inputManager.inputQueue.Count > 0)
+        {
             if (inputManager.inputQueue[0] == 1) print("Square");
-            else if(inputManager.inputQueue[0] == 2) print("Triangle");
+            else if (inputManager.inputQueue[0] == 2) { inverted = !inverted; print("Triangle"); }
             else if (inputManager.inputQueue[0] == 4) print("Circle");
+            else if (inputManager.inputQueue[0] == 6 && pizzaObject != null) ShootPizza();
+            inputManager.inputQueue.RemoveAt(0);
         }
 
-        if (Input.GetButtonDown("XB_TRIANGLE")) inverted = !inverted;
-        if (Input.GetButtonDown("XB_R1") && pizzaObject != null) ShootPizza();
-        //if (Input.GetButton("XB_CROSS")) rb.velocity = rb.velocity + (transform.forward * velocity);
+
         if (mov)
         {
-            if (Input.GetButton("XB_R1")) nitro = true;
+            if (inputManager.L1Hold) nitro = true;
             else nitro = false;
             if (inputManager.crossHold)
             {
                 if (nitro) currentVelocity += nitroVelocity;
                 else currentVelocity += velocity;
             }
-            else if (Input.GetButton("XB_CIRCLE")) currentVelocity -= velocityReduction * 5;
+            else if (inputManager.circleHold) currentVelocity -= velocityReduction * 5;
             else if (currentVelocity > 0) currentVelocity -= velocityReduction;
             else if (currentVelocity < 0) currentVelocity += velocityReduction;
             else currentVelocity = 0;
-            if (nitro && inputManager.crossHold) { currentVelocity = Mathf.Clamp(currentVelocity, -nitroMaxVelocity, nitroMaxVelocity);
-                transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y,8), ref zeroVel, stretchTime); }
-            else { currentVelocity = Mathf.Clamp(currentVelocity, -maxVelocity, maxVelocity);
-                transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y,1 ), ref zeroVel, stretchTime/4); }
+            if (nitro && inputManager.crossHold)
+            {
+                currentVelocity = Mathf.Clamp(currentVelocity, -nitroMaxVelocity, nitroMaxVelocity);
+                transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y, 8), ref zeroVel, stretchTime);
+            }
+            else
+            {
+                currentVelocity = Mathf.Clamp(currentVelocity, -maxVelocity, maxVelocity);
+                transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y, 1), ref zeroVel, stretchTime / 4);
+            }
             rb.velocity = transform.forward * currentVelocity;
 
 
             if (Mathf.Abs(inputManager.inputHorizontal) > 0 && currentVelocity > 0)
             {
-                transform.Rotate(new Vector3(0, inputManager.inputHorizontal * turnVelocity, 0));   
+                transform.Rotate(new Vector3(0, inputManager.inputHorizontal * turnVelocity, 0));
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, -inputManager.inputHorizontal * 90), stability);
             }
-            if (Mathf.Abs(inputManager.inputVertical) > 0 && currentVelocity > 0) { if(inverted) transform.Rotate(new Vector3(-inputManager.inputVertical * turnVelocity, 0, 0));
-            else transform.Rotate(new Vector3(inputManager.inputVertical * turnVelocity, 0, 0));
+            if (Mathf.Abs(inputManager.inputVertical) > 0 && currentVelocity > 0)
+            {
+                if (inverted) transform.Rotate(new Vector3(-inputManager.inputVertical * turnVelocity, 0, 0));
+                else transform.Rotate(new Vector3(inputManager.inputVertical * turnVelocity, 0, 0));
             }
 
-
-            //   transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, 0);
-            //Return to normal
             if (Mathf.Abs(inputManager.inputHorizontal) < 0.5F && Mathf.Abs(inputManager.inputVertical) < 0.5f)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0), stability);
             }
         }
-
-
-
-        //    if (Input.GetButton("XB_CIRCLE")) rb.AddForce(new Vector3(0, 0, brakeVelocity));
-        //    if (Input.GetButton("XB_SQUARE")) rb.AddTorque(new Vector3(0, turnVelocity, 0));
-
-
-        //  print(transform.rotation.eulerAngles);
-        //        if (transform.rotation.eulerAngles.y > 2) transform.Rotate(-stability, 0, 0);
-        //      else transform.rotation = Quaternion.identity;
-        //   else if (transform.rotation.eulerAngles.y < 0) transform.Rotate(stability, 0, 0);
-        //    rb.AddForce(new Vector3(inputManager.inputHorizontal*velocity, 0, inputManager.inputVertical * velocity));
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Pizza") && pizzaDelay + 2f < Time.time) GetPizza(other.gameObject);
         if (other.transform.CompareTag("Wall") && mov) { StartCoroutine("Crash"); print("crash"); }
-       // StartCoroutine("Crash"); print("crash");
+        // StartCoroutine("Crash"); print("crash");
     }
 
-    void GetPizza(GameObject pizza) {
+    void GetPizza(GameObject pizza)
+    {
         pizzaObject = pizza;
         pizza.transform.position = pizzaContainer.transform.position;
         pizza.transform.rotation = transform.rotation;
         pizza.transform.SetParent(pizzaContainer.transform);
+        pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 
-    void ShootPizza() {
+    void ShootPizza()
+    {
         pizzaDelay = Time.time;
 
 
-
+        pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         pizzaObject.transform.SetParent(null);
         pizzaObject.GetComponent<Rigidbody>().velocity = transform.forward * (pizzaShootVelocity + currentVelocity);
+
     }
 
     IEnumerator Crash()

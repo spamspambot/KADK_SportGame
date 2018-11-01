@@ -23,6 +23,8 @@ public class Player_Input : MonoBehaviour
     bool L2Switch;
     bool R1Switch;
     public bool crossHold;
+    public bool circleHold;
+    public bool L1Hold;
     public bool KB = true;
     public bool XBOX = true;
     public bool PS4;
@@ -113,10 +115,9 @@ public class Player_Input : MonoBehaviour
                 }
                 if (XBOX)
                 {
-                    if (Input.GetButtonDown("XB_R1") && !R1Switch) { SwitchUp(); R1Switch = true; }
-                    if (Input.GetButtonDown("XB_L1") && !L2Switch) { SwitchDown(); L2Switch = true; }
-                    if (Input.GetButtonUp("XB_R1")) R1Switch = false;
-                    if (Input.GetButtonUp("XB_L1")) L2Switch = false;
+                    if (Input.GetButtonDown("XB_R1")) { R1();  }
+                    if (Input.GetButtonDown("XB_L1")) { L1();  }
+
 
                     if (Input.GetButtonDown("XB_CROSS")) Cross();
                     if (Input.GetButtonDown("XB_SQUARE")) Square();
@@ -124,6 +125,10 @@ public class Player_Input : MonoBehaviour
                     if (Input.GetButtonDown("XB_CIRCLE")) Circle();
                     if (Input.GetButton("XB_CROSS")) crossHold = true;
                     else crossHold = false;
+                    if (Input.GetButton("XB_CIRCLE")) circleHold = true;
+                    else circleHold = false;
+                    if (Input.GetButton("XB_L1")) L1Hold = true;
+                    else L1Hold = false;
 
 
                 }
@@ -201,8 +206,17 @@ public class Player_Input : MonoBehaviour
                     if (Input.GetButtonDown("XB_TRIANGLE_2")) Triangle();
                     if (Input.GetButtonDown("XB_CIRCLE_2")) Circle();
 
+                    if (Input.GetButtonDown("XB_R1_2")) { R1(); }
+                    if (Input.GetButtonDown("XB_L1_2")) { L1(); }
+
+                    if (Input.GetButton("XB_L1_2")) L1Hold = true;
+                    else L1Hold = false;
+
                     if (Input.GetButton("XB_CROSS_2")) crossHold = true;
                     else crossHold = false;
+                    if (Input.GetButton("XB_CIRCLE_2")) circleHold = true;
+                    else circleHold = false;
+
                 }
 
 
@@ -265,6 +279,10 @@ public class Player_Input : MonoBehaviour
     void Triangle() { StartCoroutine("BufferReset", 2); }
     void Cross() { StartCoroutine("BufferReset", 3); }
     void Circle() { StartCoroutine("BufferReset", 4); }
+    void R1() { StartCoroutine("BufferReset", 6); }
+    void L1() { StartCoroutine("BufferReset", 5); }
+
+
 
     void Dash() { StartCoroutine("BufferReset", 1); }
     void BackDash() { StartCoroutine("BufferReset", 2); }
