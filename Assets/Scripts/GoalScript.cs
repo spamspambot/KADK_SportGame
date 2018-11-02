@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GoalScript : MonoBehaviour
 {
+    public GameObject pointSound;
     public int ID;
     int points;
     // Use this for initialization
@@ -28,7 +29,7 @@ public class GoalScript : MonoBehaviour
                 ManagerScript.team1Score++;
             else if (ID == 2) ManagerScript.team2Score++;
 
-            print("Obama");
+            Instantiate(pointSound, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
         }
 

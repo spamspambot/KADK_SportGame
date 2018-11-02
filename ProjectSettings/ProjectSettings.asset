@@ -630,11 +630,11 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 1
+    Collab: 0
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 61bced64-a90b-4563-9f0a-757ee266ab26
+  cloudProjectId: ad478244-224b-4a77-8ffd-95f5644e92d4
   projectName: KADK_SportGame
   organizationId: spambot-ce9d0b2c-78b0-4381-99aa-c86acc1f9e77
   cloudEnabled: 0
