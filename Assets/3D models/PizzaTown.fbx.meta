@@ -10,11 +10,25 @@ ModelImporter:
     100004: Plane
     100006: Puzzle-Console-L00A
     100008: Structure-Arch-M02A
+    100010: Circle.000
+    100012: Circle.001
+    100014: Circle.003
+    100016: Circle.004
+    100018: Circle.005
+    100020: Circle.006
+    100022: Circle.007
     400000: Circle.002
     400002: //RootNode
     400004: Plane
     400006: Puzzle-Console-L00A
     400008: Structure-Arch-M02A
+    400010: Circle.000
+    400012: Circle.001
+    400014: Circle.003
+    400016: Circle.004
+    400018: Circle.005
+    400020: Circle.006
+    400022: Circle.007
     2100000: Material.010
     2100002: Material.004
     2100004: Material.001
@@ -34,14 +48,35 @@ ModelImporter:
     2300002: Plane
     2300004: Puzzle-Console-L00A
     2300006: Structure-Arch-M02A
+    2300008: Circle.000
+    2300010: Circle.001
+    2300012: Circle.003
+    2300014: Circle.004
+    2300016: Circle.005
+    2300018: Circle.006
+    2300020: Circle.007
     3300000: Circle.002
     3300002: Plane
     3300004: Puzzle-Console-L00A
     3300006: Structure-Arch-M02A
+    3300008: Circle.000
+    3300010: Circle.001
+    3300012: Circle.003
+    3300014: Circle.004
+    3300016: Circle.005
+    3300018: Circle.006
+    3300020: Circle.007
     4300000: Plane
     4300002: Circle.002
     4300004: Structure-Arch-M02A
     4300006: Puzzle-Console-L00A
+    4300008: Circle.003
+    4300010: Circle.001
+    4300012: Circle.000
+    4300014: Circle.007
+    4300016: Circle.006
+    4300018: Circle.005
+    4300020: Circle.004
   externalObjects:
   - first:
       type: UnityEngine:Material
