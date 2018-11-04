@@ -10,7 +10,9 @@ public class Player_Movement : MonoBehaviour
     public bool inverted;
     public GameObject pizzaContainer;
     public GameObject pizzaObject;
-    
+    public GameObject pizzaObject2;
+    public GameObject pizzaObject3;
+
     public bool mov;
     public bool nitro;
     public int fuel;
@@ -34,11 +36,14 @@ public class Player_Movement : MonoBehaviour
     public AudioSource nitroSource;
     public AudioClip nitroStart;
     public AudioClip nitroStop;
+    public GameObject pizzaSound;
     public GameObject crashSound;
     public GameObject collideSound;
     bool thrust;
     Transform startTransform;
     Vector3 zeroVel;
+    public List<GameObject> pizzaList;
+
     // Use this for initialization
     void Start()
     {
@@ -121,7 +126,7 @@ public class Player_Movement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")) Instantiate(collideSound, transform.position, Quaternion.identity);
+        if (other.CompareTag("Player")) Instantiate(collideSound, transform.position, Quaternion.identity);
         if (other.CompareTag("Pizza") && pizzaDelay + 2f < Time.time) GetPizza(other.gameObject);
         if (other.transform.CompareTag("Wall") && mov) { StartCoroutine("Crash"); print("crash"); }
         // StartCoroutine("Crash"); print("crash");
@@ -129,30 +134,62 @@ public class Player_Movement : MonoBehaviour
 
     void GetPizza(GameObject pizza)
     {
-        pizzaObject = pizza;
-        pizza.transform.position = pizzaContainer.transform.position;
-        pizza.transform.rotation = transform.rotation;
-        pizza.transform.SetParent(pizzaContainer.transform);
-        pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        if (!pizzaList.Contains(pizza))
+        {
+            pizzaList.Add(pizza);
+            if (pizzaObject == null) { pizzaObject = pizza; pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; }
+            else if (pizzaObject2 == null) { pizzaObject2 = pizza; pizzaObject2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; }
+
+            else if (pizzaObject == null) { pizzaObject3 = pizza; pizzaObject3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll; }
+
+            pizza.transform.position = pizzaContainer.transform.position;
+            pizza.transform.rotation = transform.rotation;
+            pizza.transform.SetParent(pizzaContainer.transform);
+        }
+ 
+
+      
+
     }
 
     void ShootPizza()
     {
-        pizzaDelay = Time.time;
+        Instantiate(pizzaSound, transform.position, Quaternion.identity);
+        print("Shoot");
+        if (pizzaObject3 != null) { pizzaObject3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; pizzaObject3.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            pizzaDelay = Time.time;
+            pizzaObject3.GetComponent<Rigidbody>().isKinematic = false;
 
+            pizzaObject3.transform.SetParent(null);
+            pizzaObject3.GetComponent<Rigidbody>().velocity = transform.forward * (pizzaShootVelocity + currentVelocity);
+            pizzaList.Remove(pizzaObject3);
+            pizzaObject3 = null;
 
-        pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+        else if (pizzaObject2 != null) { pizzaObject2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; pizzaObject2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            pizzaDelay = Time.time;
+            pizzaObject2.GetComponent<Rigidbody>().isKinematic = false;
 
-        pizzaObject.GetComponent<Rigidbody>().isKinematic = false;
+            pizzaObject2.transform.SetParent(null);
+            pizzaObject2.GetComponent<Rigidbody>().velocity = transform.forward * (pizzaShootVelocity + currentVelocity);
+            pizzaList.Remove(pizzaObject2);
+            pizzaObject2 = null;
+        }
 
-        pizzaObject.transform.SetParent(null);
-        pizzaObject.GetComponent<Rigidbody>().velocity = transform.forward * (pizzaShootVelocity + currentVelocity);
+        else if (pizzaObject != null) { pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None; pizzaObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            pizzaDelay = Time.time;
+            pizzaObject.GetComponent<Rigidbody>().isKinematic = false;
 
+            pizzaObject.transform.SetParent(null);
+            pizzaObject.GetComponent<Rigidbody>().velocity = transform.forward * (pizzaShootVelocity + currentVelocity);
+            pizzaList.Remove(pizzaObject);
+            pizzaObject = null;
+        }
     }
 
     IEnumerator Crash()
     {
-        Instantiate(crashSound,transform.position,Quaternion.identity);
+        Instantiate(crashSound, transform.position, Quaternion.identity);
         print("crash");
         mov = false;
         yield return new WaitForSeconds(crashTime);

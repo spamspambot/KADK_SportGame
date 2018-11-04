@@ -17,6 +17,15 @@ ModelImporter:
     100018: Circle.005
     100020: Circle.006
     100022: Circle.007
+    100024: Circle.008
+    100026: Circle.009
+    100028: Circle.010
+    100030: Circle.011
+    100032: Circle.012
+    100034: Circle.013
+    100036: Circle.014
+    100038: Circle.015
+    100040: Structure-Arch-M02A.001
     400000: Circle.002
     400002: //RootNode
     400004: Plane
@@ -29,6 +38,15 @@ ModelImporter:
     400018: Circle.005
     400020: Circle.006
     400022: Circle.007
+    400024: Circle.008
+    400026: Circle.009
+    400028: Circle.010
+    400030: Circle.011
+    400032: Circle.012
+    400034: Circle.013
+    400036: Circle.014
+    400038: Circle.015
+    400040: Structure-Arch-M02A.001
     2100000: Material.010
     2100002: Material.004
     2100004: Material.001
@@ -55,6 +73,15 @@ ModelImporter:
     2300016: Circle.005
     2300018: Circle.006
     2300020: Circle.007
+    2300022: Circle.008
+    2300024: Circle.009
+    2300026: Circle.010
+    2300028: Circle.011
+    2300030: Circle.012
+    2300032: Circle.013
+    2300034: Circle.014
+    2300036: Circle.015
+    2300038: Structure-Arch-M02A.001
     3300000: Circle.002
     3300002: Plane
     3300004: Puzzle-Console-L00A
@@ -66,6 +93,15 @@ ModelImporter:
     3300016: Circle.005
     3300018: Circle.006
     3300020: Circle.007
+    3300022: Circle.008
+    3300024: Circle.009
+    3300026: Circle.010
+    3300028: Circle.011
+    3300030: Circle.012
+    3300032: Circle.013
+    3300034: Circle.014
+    3300036: Circle.015
+    3300038: Structure-Arch-M02A.001
     4300000: Plane
     4300002: Circle.002
     4300004: Structure-Arch-M02A
@@ -77,6 +113,15 @@ ModelImporter:
     4300016: Circle.006
     4300018: Circle.005
     4300020: Circle.004
+    4300022: Circle.015
+    4300024: Circle.014
+    4300026: Circle.013
+    4300028: Circle.010
+    4300030: Circle.012
+    4300032: Circle.011
+    4300034: Structure-Arch-M02A.001
+    4300036: Circle.009
+    4300038: Circle.008
   externalObjects:
   - first:
       type: UnityEngine:Material
