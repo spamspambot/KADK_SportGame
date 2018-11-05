@@ -12,7 +12,7 @@ public class Player_Movement : MonoBehaviour
     public GameObject pizzaObject;
     public GameObject pizzaObject2;
     public GameObject pizzaObject3;
-
+    public float stretchAmount = 8;
     public bool mov;
     public bool nitro;
     public int fuel;
@@ -110,7 +110,7 @@ public class Player_Movement : MonoBehaviour
         if (inputManager.L1Hold && currentFuel > 0 && !overheat && inputManager.crossHold && mov && pizzaObject == null)
         {
             currentVelocity = Mathf.Clamp(currentVelocity, -nitroMaxVelocity, nitroMaxVelocity);
-            transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y, 8), ref zeroVel, stretchTime); currentFuel--; if (currentFuel <= 0) overheat = true; if (!nitro) { nitroSource.clip = nitroStart; nitroSource.Play(); }
+            transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y, stretchAmount), ref zeroVel, stretchTime); currentFuel--; if (currentFuel <= 0) overheat = true; if (!nitro) { nitroSource.clip = nitroStart; nitroSource.Play(); }
             nitro = true;
         }
         else

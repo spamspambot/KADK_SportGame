@@ -5103,6 +5103,11 @@ Prefab:
       propertyPath: m_Name
       value: Player_1
       objectReference: {fileID: 0}
+    - target: {fileID: 114716618621608122, guid: b18a98a57b724774a856d81597a19164,
+        type: 2}
+      propertyPath: stretchAmount
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b18a98a57b724774a856d81597a19164, type: 2}
   m_IsPrefabParent: 0
@@ -6655,6 +6660,11 @@ Prefab:
       value: 
       objectReference: {fileID: 1099306336368130, guid: 1fb18118468605148b8800a074adfc17,
         type: 2}
+    - target: {fileID: 114744138815952642, guid: f23998c2139bebd4e9d7559be589dce4,
+        type: 2}
+      propertyPath: stretchAmount
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f23998c2139bebd4e9d7559be589dce4, type: 2}
   m_IsPrefabParent: 0
@@ -6786,10 +6796,12 @@ MonoBehaviour:
   currentY: 0
   distance: -10
   minDistance: -10
-  maxDistance: -15
-  cameraZoomSpeed: 0.2
+  maxDistance: -40
+  cameraZoomSpeed: 0.4
+  cameraStrechSpeed: 0.5
   cameraHeight: 5
   fieldOfViewMultiplier: 0
+  onScreenList: 
 --- !u!81 &616834105
 AudioListener:
   m_ObjectHideFlags: 0
@@ -15389,10 +15401,12 @@ MonoBehaviour:
   currentY: 0
   distance: -10
   minDistance: -10
-  maxDistance: -15
-  cameraZoomSpeed: 0.2
+  maxDistance: -40
+  cameraZoomSpeed: 0.4
+  cameraStrechSpeed: 0.5
   cameraHeight: 5
   fieldOfViewMultiplier: 0
+  onScreenList: 
 --- !u!81 &2033992707
 AudioListener:
   m_ObjectHideFlags: 0
@@ -15506,10 +15520,12 @@ MonoBehaviour:
   currentY: 0
   distance: -10
   minDistance: -10
-  maxDistance: -15
-  cameraZoomSpeed: 0.2
+  maxDistance: -40
+  cameraZoomSpeed: 0.4
+  cameraStrechSpeed: 0.5
   cameraHeight: 5
   fieldOfViewMultiplier: 0
+  onScreenList: 
 --- !u!81 &2047236995
 AudioListener:
   m_ObjectHideFlags: 0
@@ -15978,10 +15994,12 @@ MonoBehaviour:
   currentY: 0
   distance: -10
   minDistance: -10
-  maxDistance: -20
-  cameraZoomSpeed: 0.2
-  cameraHeight: 4
+  maxDistance: -40
+  cameraZoomSpeed: 0.4
+  cameraStrechSpeed: 0.5
+  cameraHeight: 5
   fieldOfViewMultiplier: 30
+  onScreenList: 000000
 --- !u!81 &2139299247
 AudioListener:
   m_ObjectHideFlags: 0
