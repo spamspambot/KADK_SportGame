@@ -1036,6 +1036,8 @@ MonoBehaviour:
   inverted: 0
   pizzaContainer: {fileID: 1407625032364400}
   pizzaObject: {fileID: 0}
+  pizzaObject2: {fileID: 0}
+  pizzaObject3: {fileID: 0}
   mov: 1
   nitro: 0
   fuel: 300
@@ -1058,9 +1060,11 @@ MonoBehaviour:
   nitroSource: {fileID: 82436745136401792}
   nitroStart: {fileID: 8300000, guid: 5df62f0aeb4fa074e9b6ba8bc23a29e1, type: 3}
   nitroStop: {fileID: 8300000, guid: 096254a9612a61e4eaec3a216c90d9f4, type: 3}
+  pizzaSound: {fileID: 1099306336368130, guid: 1fb18118468605148b8800a074adfc17, type: 2}
   crashSound: {fileID: 1063478328726034, guid: 320a01f0a98818a48a739337bdfee73f, type: 2}
   collideSound: {fileID: 1760378211969320, guid: dace9aa26e8f8b14db4b88ff1906b353,
     type: 2}
+  pizzaList: []
 --- !u!198 &198156122843498078
 ParticleSystem:
   m_ObjectHideFlags: 1

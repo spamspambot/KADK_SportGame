@@ -5,9 +5,11 @@ using UnityEngine;
 public class PizzaScript : MonoBehaviour {
     public bool idle;
     public float turnSpeed;
+    public float spoilTime = 15F;
+    public bool spoiled;
 	// Use this for initialization
 	void Start () {
-		
+        StartCoroutine("HawaiiPizza");		
 	}
 	
 	// Update is called once per frame
@@ -18,9 +20,15 @@ public class PizzaScript : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        { //transform.rotation = Quaternion.identity;
-            idle = false; }
+        {
+            idle = false;
+        }
+        else idle = true;
     }
 
-
+    IEnumerator HawaiiPizza()
+    {
+        yield return new WaitForSeconds(spoilTime);
+        spoiled = true;
+    }
 }

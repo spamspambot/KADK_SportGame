@@ -107,7 +107,7 @@ public class Player_Movement : MonoBehaviour
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0), stability);
             }
         }
-        if (inputManager.L1Hold && currentFuel > 0 && !overheat && inputManager.crossHold && mov)
+        if (inputManager.L1Hold && currentFuel > 0 && !overheat && inputManager.crossHold && mov && pizzaObject == null)
         {
             currentVelocity = Mathf.Clamp(currentVelocity, -nitroMaxVelocity, nitroMaxVelocity);
             transform.localScale = Vector3.SmoothDamp(transform.localScale, new Vector3(startTransform.localScale.x, startTransform.localScale.y, 8), ref zeroVel, stretchTime); currentFuel--; if (currentFuel <= 0) overheat = true; if (!nitro) { nitroSource.clip = nitroStart; nitroSource.Play(); }

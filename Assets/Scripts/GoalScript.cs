@@ -5,6 +5,7 @@ using UnityEngine;
 public class GoalScript : MonoBehaviour
 {
     public GameObject pointSound;
+    public GameObject yuckSound;
     public int ID;
     int points;
     // Use this for initialization
@@ -24,13 +25,25 @@ public class GoalScript : MonoBehaviour
         print("Bama");
         if (other.CompareTag("Pizza"))
         {
-            points += 1;
-            if (ID == 1)
-                ManagerScript.team1Score++;
-            else if (ID == 2) ManagerScript.team2Score++;
+            if (other.GetComponent<PizzaScript>().spoiled)
+            {
+                if (ID == 1)
+                    ManagerScript.team1Score--;
+                else if (ID == 2) ManagerScript.team2Score--;
 
-            Instantiate(pointSound, transform.position, Quaternion.identity);
-            Destroy(other.gameObject);
+                Instantiate(yuckSound, transform.position, Quaternion.identity);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                if (ID == 1)
+                    ManagerScript.team1Score++;
+                else if (ID == 2) ManagerScript.team2Score++;
+
+                Instantiate(pointSound, transform.position, Quaternion.identity);
+                Destroy(other.gameObject);
+            }
+
         }
 
     }
