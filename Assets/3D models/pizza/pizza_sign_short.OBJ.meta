@@ -54,7 +54,47 @@ ModelImporter:
     4300012: Group48444
     4300014: Group50624
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group11181Mat
+    second: {fileID: 2100000, guid: b2fc1704eeb5447d693861cc5ac2cd5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group32460Mat
+    second: {fileID: 2100000, guid: b2fc1704eeb5447d693861cc5ac2cd5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group32475Mat
+    second: {fileID: 2100000, guid: b2fc1704eeb5447d693861cc5ac2cd5e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group32550Mat
+    second: {fileID: 2100000, guid: 7ae37ca3f62e54f0ca12addc96a0c288, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group40002Mat
+    second: {fileID: 2100000, guid: af9e83e483ce2419c8321aeb82e40646, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group42137Mat
+    second: {fileID: 2100000, guid: 49c218db16aa175499cace2d98a8d383, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group48444Mat
+    second: {fileID: 2100000, guid: 0ea1b3ffe1d831f41ae9ad156b62b3aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Group50624Mat
+    second: {fileID: 2100000, guid: e597d06d5df23468dbfcdf01e35b4943, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
