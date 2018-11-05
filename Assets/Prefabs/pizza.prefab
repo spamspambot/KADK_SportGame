@@ -582,7 +582,7 @@ MonoBehaviour:
   idle: 0
   turnSpeed: 2
   spoilTime: 15
-  pineapple: {fileID: 0}
+  pineapple: {fileID: 1229578417742142}
   spoiled: 0
 --- !u!135 &135761427774500774
 SphereCollider:
