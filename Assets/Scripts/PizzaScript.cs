@@ -6,6 +6,7 @@ public class PizzaScript : MonoBehaviour {
     public bool idle;
     public float turnSpeed;
     public float spoilTime = 15F;
+    public GameObject pineapple;
     public bool spoiled;
 	// Use this for initialization
 	void Start () {
@@ -30,5 +31,6 @@ public class PizzaScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(spoilTime);
         spoiled = true;
+        pineapple.SetActive(true);
     }
 }
