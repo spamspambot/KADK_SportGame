@@ -18,8 +18,8 @@ public class UIScript : MonoBehaviour
     void Update()
     {
         if (ID == 1)
-            scoreText.text = "Score: " + ManagerScript.team1Score;
+            scoreText.text = ""+ManagerScript.team1Score;
         else if (ID == 2)
-            scoreText.text = "Score: " + ManagerScript.team2Score;
+            scoreText.text = ""+ManagerScript.team2Score;
     }
 }

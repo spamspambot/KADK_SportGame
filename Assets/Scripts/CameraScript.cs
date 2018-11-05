@@ -30,7 +30,7 @@ public class CameraScript : MonoBehaviour
     void Awake()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        
+
         cam = GetComponent<Camera>();
         if (player4)
         {
@@ -57,30 +57,37 @@ public class CameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (Input.GetKeyDown("k")) { PlayerIndicator(); }
-
+        if (playerMov.nitro)
+            distance = Mathf.SmoothDamp(distance, maxDistance, ref zeroFloat, cameraZoomSpeed);
+        else distance = Mathf.SmoothDamp(distance,(playerMov.currentVelocity/playerMov.maxVelocity)*(maxDistance-minDistance)/2 + minDistance, ref zeroFloat, cameraZoomSpeed );
         if (playerMov.nitro)
             cam.fieldOfView = Mathf.SmoothDamp(cam.fieldOfView, 85, ref zeroFloat, cameraStrechSpeed);
-        else cam.fieldOfView = Mathf.SmoothDamp(cam.fieldOfView, 70, ref zeroFloat, cameraStrechSpeed);
+        else cam.fieldOfView = Mathf.SmoothDamp(cam.fieldOfView, 40, ref zeroFloat, cameraStrechSpeed);
         currentX = target.rotation.eulerAngles.x;
         currentY = target.rotation.eulerAngles.y;
         //      distance = minDistance;
-        if (playerMov.nitro)
-            distance = Mathf.SmoothDamp(distance, maxDistance, ref zeroFloat, cameraZoomSpeed);
-        else distance = Mathf.SmoothDamp(distance, minDistance, ref zeroFloat, cameraZoomSpeed/4);
+
 
         Vector3 dir = new Vector3(0, 0, distance);
         Quaternion rotation = Quaternion.Euler(currentY / 360, currentX / 360, 0);
+
+
+    }
+
+    private void LateUpdate()
+    {
         transform.position = target.position + target.forward * distance + target.up * cameraHeight;
         transform.LookAt(target.position);
 
     }
 
-    void PlayerIndicator() {
-     //   Vector3 screenPosition = cam.WorldToScreenPoint(players[0].transform.position);
-   //     onScreenList[0] = screenPosition.x > 0 && screenPosition.x < 1 && screenPosition.y > 0 && screenPosition.y < 1;
+    void PlayerIndicator()
+    {
+        //   Vector3 screenPosition = cam.WorldToScreenPoint(players[0].transform.position);
+        //     onScreenList[0] = screenPosition.x > 0 && screenPosition.x < 1 && screenPosition.y > 0 && screenPosition.y < 1;
     }
 }

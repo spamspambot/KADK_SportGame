@@ -70,14 +70,7 @@ public class Player_Input : MonoBehaviour
                     StartCoroutine("DirectionalReset", 4);
                     lastDirectional = 4;
                 }
-                /*
-                if (directionalQueue.Count > 2)
-                    if (directionalQueue[0] == 6 && directionalQueue[1] == 5 && directionalQueue[2] == 6) playerMovement.doubleTap = true;
-                    else if (directionalQueue[0] == 4 && directionalQueue[1] == 5 && directionalQueue[2] == 4) playerMovement.doubleTap = true;
-                if (playerMovement.running && directionalQueue.Count > 0)
-                {
-                    if (directionalQueue[0] == 5 && lastDirectional == 5) playerMovement.doubleTap = false;
-                }*/
+
 
                 if (KB)
                 {
@@ -85,9 +78,6 @@ public class Player_Input : MonoBehaviour
                     if (Input.GetButtonDown("KB_CIRCLE") && !Input.GetButtonDown("KB_SQUARE") && !Input.GetButtonDown("KB_TRIANGLE") && inputHorizontal != 0) Dash();
 
                     if (Input.GetButtonDown("KB_CROSS")) Cross();
-
-                    //    if (Input.GetAxis("KB_Trigger") > 0 && !L2Switch) { SwitchUp(); L2Switch = true; }
-                    //    if (Input.GetAxis("KB_Trigger") < 0 && !L2Switch) { SwitchDown(); L2Switch = true; }
 
                     if (Input.GetButtonDown("KB_R1") && !R1Switch) { SwitchUp(); R1Switch = true; }
                     if (Input.GetButtonDown("KB_L1") && !L2Switch) { SwitchDown(); L2Switch = true; }
@@ -115,8 +105,8 @@ public class Player_Input : MonoBehaviour
                 }
                 if (XBOX)
                 {
-                    if (Input.GetButtonDown("XB_R1")) { R1();  }
-                    if (Input.GetButtonDown("XB_L1")) { L1();  }
+                    if (Input.GetButtonDown("XB_R1")) { R1(); }
+                    if (Input.GetButtonDown("XB_L1")) { L1(); }
 
 
                     if (Input.GetButtonDown("XB_CROSS")) Cross();
@@ -156,14 +146,7 @@ public class Player_Input : MonoBehaviour
                     StartCoroutine("DirectionalReset", 4);
                     lastDirectional = 4;
                 }
-                /*
-                if (directionalQueue.Count > 2)
-                    if (directionalQueue[0] == 6 && directionalQueue[1] == 5 && directionalQueue[2] == 6) playerMovement.doubleTap = true;
-                    else if (directionalQueue[0] == 4 && directionalQueue[1] == 5 && directionalQueue[2] == 4) playerMovement.doubleTap = true;
-                if (playerMovement.running && directionalQueue.Count > 0)
-                {
-                    if (directionalQueue[0] == 5 && lastDirectional == 5) playerMovement.doubleTap = false;
-                }*/
+
 
                 if (KB)
                 {
@@ -172,8 +155,6 @@ public class Player_Input : MonoBehaviour
 
                     if (Input.GetButtonDown("KB_CROSS_2")) Cross();
 
-                    //    if (Input.GetAxis("KB_Trigger") > 0 && !L2Switch) { SwitchUp(); L2Switch = true; }
-                    //    if (Input.GetAxis("KB_Trigger") < 0 && !L2Switch) { SwitchDown(); L2Switch = true; }
 
                     if (Input.GetButtonDown("KB_R1_2") && !R1Switch) { SwitchUp(); R1Switch = true; }
                     if (Input.GetButtonDown("KB_L1_2") && !L2Switch) { SwitchDown(); L2Switch = true; }
@@ -221,7 +202,166 @@ public class Player_Input : MonoBehaviour
 
 
             }
+            else if (playerID == 2)
+            {
+                if (Mathf.Abs(Input.GetAxis("KB_Horizontal_3")) > Mathf.Abs(Input.GetAxis("XB_Horizontal_3"))) { inputHorizontal = Input.GetAxis("KB_Horizontal_3"); }
+                else inputHorizontal = Input.GetAxis("XB_Horizontal_3");
+                if (Mathf.Abs(Input.GetAxis("KB_Vertical_3")) > Mathf.Abs(Input.GetAxis("XB_Vertical_3"))) { inputVertical = Input.GetAxis("KB_Vertical_3"); }
+                else inputVertical = Input.GetAxis("XB_Vertical_3");
 
+
+                if (inputHorizontal == 1 && lastDirectional != 6)
+                {
+                    StartCoroutine("DirectionalReset", 6);
+                    lastDirectional = 6;
+                }
+                if (inputHorizontal == 0 && lastDirectional != 5)
+                {
+                    StartCoroutine("DirectionalReset", 5);
+                    lastDirectional = 5;
+                }
+                if (inputHorizontal == -1 && lastDirectional != 4)
+                {
+                    StartCoroutine("DirectionalReset", 4);
+                    lastDirectional = 4;
+                }
+
+
+                if (KB)
+                {
+                    if (Input.GetButtonDown("KB_CIRCLE_3") && !Input.GetButtonDown("KB_SQUARE_3") && !Input.GetButtonDown("KB_TRIANGLE_3") && inputHorizontal == 0) BackDash();
+                    if (Input.GetButtonDown("KB_CIRCLE_3") && !Input.GetButtonDown("KB_SQUARE_3") && !Input.GetButtonDown("KB_TRIANGLE_3") && inputHorizontal != 0) Dash();
+
+                    if (Input.GetButtonDown("KB_CROSS_3")) Cross();
+
+
+                    if (Input.GetButtonDown("KB_R1_3") && !R1Switch) { SwitchUp(); R1Switch = true; }
+                    if (Input.GetButtonDown("KB_L1_3") && !L2Switch) { SwitchDown(); L2Switch = true; }
+                    if (Input.GetButtonUp("KB_R1_3")) R1Switch = false;
+                    if (Input.GetButtonUp("KB_L1_3")) L2Switch = false;
+
+                    if (Input.GetButtonDown("KB_TRIANGLE_3") && Input.GetAxis("KB_Horizontal_3") == 0 && Input.GetAxis("KB_Vertical_2") == 0) Circle();
+                    if (Input.GetButtonDown("KB_TRIANGLE_3") && Input.GetAxis("KB_Horizontal_3") != 0 && Input.GetAxis("KB_Vertical_2") == 0) Circle();
+                    if (Input.GetButtonDown("KB_TRIANGLE_3") && Input.GetAxis("KB_Vertical_3") > 0) USpecial();
+
+
+                    if (Input.GetButtonDown("KB_TRIANGLE_3") && Input.GetAxis("KB_Vertical_2") < 0) DSpecial();
+
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Horizontal_3") == 0 && Input.GetAxis("KB_Vertical_2") == 0 && !Input.GetButtonDown("KB_CIRCLE_3")) Square();
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Horizontal_3") != 0 && Input.GetAxis("KB_Vertical_2") == 0 && !Input.GetButtonDown("KB_CIRCLE_3")) SAttack();
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Vertical_3") > 0 && !Input.GetButtonDown("KB_CIRCLE_3")) Triangle();
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Vertical_3") < 0 && !Input.GetButtonDown("KB_CIRCLE_3")) DAttack();
+
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Horizontal_3") == 0 && Input.GetAxis("KB_Vertical_2") == 0 && Input.GetButtonDown("KB_CIRCLE_3")) Dash();
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Horizontal_3") != 0 && Input.GetAxis("KB_Vertical_2") == 0 && Input.GetButtonDown("KB_CIRCLE_3")) Dash();
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Vertical_2") > 0 && Input.GetButtonDown("KB_CIRCLE_3")) Dash();
+                    if (Input.GetButtonDown("KB_SQUARE_3") && Input.GetAxis("KB_Vertical_2") < 0 && Input.GetButtonDown("KB_CIRCLE_3")) Dash();
+
+                    if (Input.GetButtonUp("KB_SQUARE_3") && Input.GetAxis("KB_Vertical_2") == 0 && !Input.GetButtonDown("KB_CIRCLE_3")) ReleaseAttack();
+                }
+                if (XBOX)
+                {
+
+                    if (Input.GetButtonDown("XB_CROSS_3")) Cross();
+                    if (Input.GetButtonDown("XB_SQUARE_3")) Square();
+                    if (Input.GetButtonDown("XB_TRIANGLE_3")) Triangle();
+                    if (Input.GetButtonDown("XB_CIRCLE_3")) Circle();
+
+                    if (Input.GetButtonDown("XB_R1_3")) { R1(); }
+                    if (Input.GetButtonDown("XB_L1_3")) { L1(); }
+
+                    if (Input.GetButton("XB_L1_3")) L1Hold = true;
+                    else L1Hold = false;
+
+                    if (Input.GetButton("XB_CROSS_3")) crossHold = true;
+                    else crossHold = false;
+                    if (Input.GetButton("XB_CIRCLE_3")) circleHold = true;
+                    else circleHold = false;
+
+                }
+
+
+
+            }
+            else if (playerID == 3)
+            {
+                if (Mathf.Abs(Input.GetAxis("KB_Horizontal_4")) > Mathf.Abs(Input.GetAxis("XB_Horizontal_4"))) { inputHorizontal = Input.GetAxis("KB_Horizontal_4"); }
+                else inputHorizontal = Input.GetAxis("XB_Horizontal_4");
+                if (Mathf.Abs(Input.GetAxis("KB_Vertical_4")) > Mathf.Abs(Input.GetAxis("XB_Vertical_4"))) { inputVertical = Input.GetAxis("KB_Vertical_4"); }
+                else inputVertical = Input.GetAxis("XB_Vertical_4");
+
+
+                if (inputHorizontal == 1 && lastDirectional != 6)
+                {
+                    StartCoroutine("DirectionalReset", 6);
+                    lastDirectional = 6;
+                }
+                if (inputHorizontal == 0 && lastDirectional != 5)
+                {
+                    StartCoroutine("DirectionalReset", 5);
+                    lastDirectional = 5;
+                }
+                if (inputHorizontal == -1 && lastDirectional != 4)
+                {
+                    StartCoroutine("DirectionalReset", 4);
+                    lastDirectional = 4;
+                }
+
+
+                if (KB)
+                {
+                    if (Input.GetButtonDown("KB_CIRCLE_4") && !Input.GetButtonDown("KB_SQUARE_4") && !Input.GetButtonDown("KB_TRIANGLE_4") && inputHorizontal == 0) BackDash();
+                    if (Input.GetButtonDown("KB_CIRCLE_4") && !Input.GetButtonDown("KB_SQUARE_4") && !Input.GetButtonDown("KB_TRIANGLE_4") && inputHorizontal != 0) Dash();
+
+                    if (Input.GetButtonDown("KB_CROSS_4")) Cross();
+
+
+                    if (Input.GetButtonDown("KB_R1_4") && !R1Switch) { SwitchUp(); R1Switch = true; }
+                    if (Input.GetButtonDown("KB_L1_4") && !L2Switch) { SwitchDown(); L2Switch = true; }
+                    if (Input.GetButtonUp("KB_R1_4")) R1Switch = false;
+                    if (Input.GetButtonUp("KB_L1_4")) L2Switch = false;
+
+                    if (Input.GetButtonDown("KB_TRIANGLE_4") && Input.GetAxis("KB_Horizontal_4") == 0 && Input.GetAxis("KB_Vertical_4") == 0) Circle();
+                    if (Input.GetButtonDown("KB_TRIANGLE_4") && Input.GetAxis("KB_Horizontal_4") != 0 && Input.GetAxis("KB_Vertical_4") == 0) Circle();
+                    if (Input.GetButtonDown("KB_TRIANGLE_4") && Input.GetAxis("KB_Vertical_4") > 0) USpecial();
+
+
+                    if (Input.GetButtonDown("KB_TRIANGLE_4") && Input.GetAxis("KB_Vertical_4") < 0) DSpecial();
+
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Horizontal_4") == 0 && Input.GetAxis("KB_Vertical_4") == 0 && !Input.GetButtonDown("KB_CIRCLE_4")) Square();
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Horizontal_4") != 0 && Input.GetAxis("KB_Vertical_4") == 0 && !Input.GetButtonDown("KB_CIRCLE_4")) SAttack();
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Vertical_4") > 0 && !Input.GetButtonDown("KB_CIRCLE_4")) Triangle();
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Vertical_4") < 0 && !Input.GetButtonDown("KB_CIRCLE_4")) DAttack();
+
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Horizontal_4") == 0 && Input.GetAxis("KB_Vertical_4") == 0 && Input.GetButtonDown("KB_CIRCLE_4")) Dash();
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Horizontal_4") != 0 && Input.GetAxis("KB_Vertical_4") == 0 && Input.GetButtonDown("KB_CIRCLE_4")) Dash();
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Vertical_4") > 0 && Input.GetButtonDown("KB_CIRCLE_4")) Dash();
+                    if (Input.GetButtonDown("KB_SQUARE_4") && Input.GetAxis("KB_Vertical_4") < 0 && Input.GetButtonDown("KB_CIRCLE_4")) Dash();
+
+                    if (Input.GetButtonUp("KB_SQUARE_4") && Input.GetAxis("KB_Vertical_4") == 0 && !Input.GetButtonDown("KB_CIRCLE_4")) ReleaseAttack();
+                }
+                if (XBOX)
+                {
+                    if (Input.GetButtonDown("XB_CROSS_4")) Cross();
+                    if (Input.GetButtonDown("XB_SQUARE_4")) Square();
+                    if (Input.GetButtonDown("XB_TRIANGLE_4")) Triangle();
+                    if (Input.GetButtonDown("XB_CIRCLE_4")) Circle();
+
+                    if (Input.GetButtonDown("XB_R1_4")) { R1(); }
+                    if (Input.GetButtonDown("XB_L1_4")) { L1(); }
+
+                    if (Input.GetButton("XB_L1_4")) L1Hold = true;
+                    else L1Hold = false;
+
+                    if (Input.GetButton("XB_CROSS_4")) crossHold = true;
+                    else crossHold = false;
+                    if (Input.GetButton("XB_CIRCLE_4")) circleHold = true;
+                    else circleHold = false;
+
+                }
+
+
+            }
 
         }
     }

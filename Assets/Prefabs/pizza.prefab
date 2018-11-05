@@ -184,8 +184,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1095059262700864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5883.817, y: 973.984, z: -3809.899}
-  m_LocalScale: {x: 8, y: 8, z: 8}
+  m_LocalPosition: {x: 547.4086, y: 1144.1531, z: -727.07446}
+  m_LocalScale: {x: 16, y: 16, z: 16}
   m_Children:
   - {fileID: 4447380082235298}
   - {fileID: 4567379618706610}
@@ -284,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 1060629234049918}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19972, y: 0.19972011, z: 0.19972011}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 4447380082235298}
   m_RootOrder: 0
@@ -583,7 +583,7 @@ MonoBehaviour:
   turnSpeed: 2
   spoilTime: 15
   pineapple: {fileID: 1229578417742142}
-  hawaiiSound: {fileID: 1246960925303682, guid: 889fb4fedde100d4a960d8f9ff8ded53,
+  hawaiiSound: {fileID: 1091434368879114, guid: d6111ad39076f9d4c90924bb946c824e,
     type: 2}
   spoiled: 0
 --- !u!135 &135761427774500774
