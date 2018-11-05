@@ -1066,7 +1066,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1e8a784c423660d4b8f4ebc781cc74ec, type: 3}
     m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
@@ -3546,7 +3546,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 1e8a784c423660d4b8f4ebc781cc74ec, type: 3}
     m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
@@ -3558,7 +3558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score:'
+  m_Text: "\tScore:"
 --- !u!222 &1020129114
 CanvasRenderer:
   m_ObjectHideFlags: 0
