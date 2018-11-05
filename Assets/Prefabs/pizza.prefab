@@ -583,6 +583,8 @@ MonoBehaviour:
   turnSpeed: 2
   spoilTime: 15
   pineapple: {fileID: 1229578417742142}
+  hawaiiSound: {fileID: 1246960925303682, guid: 889fb4fedde100d4a960d8f9ff8ded53,
+    type: 2}
   spoiled: 0
 --- !u!135 &135761427774500774
 SphereCollider:

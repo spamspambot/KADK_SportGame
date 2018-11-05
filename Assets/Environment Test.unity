@@ -391,11 +391,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114789589836899684, guid: eda329b22a226b34ea450854ebc5da3e,
-        type: 2}
-      propertyPath: spoilTime
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eda329b22a226b34ea450854ebc5da3e, type: 2}
   m_IsPrefabAsset: 0
