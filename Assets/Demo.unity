@@ -449,7 +449,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 23473723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -67, z: 81}
+  m_LocalPosition: {x: 0, y: -67, z: 89.4}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_Children: []
   m_Father: {fileID: 1345448730}
@@ -470,7 +470,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 061c508b945714b488f8557a298b0d00, type: 2}
+  - {fileID: 2100000, guid: 0b5190df4f410174881a02f4b02283d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5995,7 +5995,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1e8a784c423660d4b8f4ebc781cc74ec, type: 3}
+    m_Font: {fileID: 12800000, guid: e08b59d14ed1cc74ebefcabeb59e112b, type: 3}
     m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
@@ -7773,7 +7773,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 466294021}
-  m_LocalRotation: {x: 0.11485045, y: -0, z: -0, w: 0.9933828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -22.000002}
   m_LocalScale: {x: 1.0000076, y: 1.0000077, z: 1.0000077}
   m_Children: []
@@ -14016,7 +14016,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1e8a784c423660d4b8f4ebc781cc74ec, type: 3}
+    m_Font: {fileID: 12800000, guid: e08b59d14ed1cc74ebefcabeb59e112b, type: 3}
     m_FontSize: 68
     m_FontStyle: 1
     m_BestFit: 0
@@ -14746,7 +14746,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1148650554}
-  m_LocalRotation: {x: 0.11485045, y: -0, z: -0, w: 0.9933828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
